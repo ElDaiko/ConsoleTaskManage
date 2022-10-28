@@ -1,19 +1,15 @@
 import colors from 'colors';
-import { inquirerMenu } from './helpers/inquirer.js';
-
-console.clear();
+import { inquirerMenu, stop } from './helpers/inquirer.js';
 
 const main = async () => {
-    console.log("Hola mundo");
 
     let opt = '';
 
     do {
         opt = await inquirerMenu(); //Esperar hasta que se tenga respuesta de show menu
-        console.log({opt});
+        console.log({ opt });
 
-
-        if (opt != 0)await stop();
+        await stop();
 
     } while (opt != 0);
 
